@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the project submission for Katelyn Graham and represents a simple Weekly Planner Application that can
+be used by people to record and track their appointments. The code base for the project is made up of two main parts:
 
-## Available Scripts
+- *Back End* - this is the back end rest server logic
+- *Front End* - this is a web based application implemented using React 
 
-In the project directory, you can run:
+These two main elements of the solution are describer in more detail in the following sub-sections.
 
-### `npm start`
+# Installation
+To install the application run the command `npm install` from the project root folder.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Solution Overview
+## Back End
+This server provides a REST API to the Front End Application with the following main pieces of functionality:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- *Login*: Access to the Planner application requires users to provide a valid email and associated password 
+- *Registration*: new users can register and sign up to use the system by providing their Name, EMail address and password.
+- *Meetings*: Once logged in a person can add new meetings/ appointments,  edit existing ones, and delete/ remove them using the Front End. The server provides a set of API operations to support this.
 
-### `npm test`
+The *Back End Server* uses Express to implement the API calls, and it uses MongoDB to store the user and meetings data.
+The code for the *Back End Server* is located in a single file here: `BackEnd/server.js`.
+To launch the server from within the project root folder simply run he comment `node BackEnd/server.js`. By default the server listens on port 4000, running on localhost.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Front End
+The front end web application is impleented using React and the initial skeleton of code was created using the utility `Create React App`.
+The source code for the web application is located within the `src` directory and to launch it you can run the command `npm start` from within the project root folder. 
+The front end application contains the following main screens.
 
-### `npm run build`
+### Screen Login
+If the user has an account then they can enter their email address and password here.
+![Login Screen](docimages/login.png "Login Screen")
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screen Register
+Alternatively if this is a new user, they can click the Register button on the login page and and create a new account for themselves.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Register Screen](docimages/register.png "Register Screen")
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Screen Today
+Once logged in the user is shown the `Today` screen which lists any appointments/ meetings that they have set up for today.
+![Today Screen](docimages/today.png "Today Screen")
 
-### `npm run eject`
+### Screen Planner
+Across the top you will also see various menu options. If you click on the Planner menu option then it will show you the screen below which is a full view of the current week, day by day listing all meetings/ appointments.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Planner Screen](docimages/planner.png "Planner Screen")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Screen Add
+Also across the top of the screen you will see the `Add` menu opton which you can use to add new meetings to your planner. When you select the Add menu option you will see the screen below where you can provide meeting details. This includes a Description, Date, Start Time and End Time.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Add Screen](docimages/add.png "Add Screen")
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The logic associated with this screen also validates the data that is entered to make sure that all fields are filled out correctly, and if not then a suitable error message is displayed.
 
-## Learn More
+![Add Screen Seror](docimages/add-error.png "Add Screen Error")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Screen Update
+You should notice that for each existing Meeting on the Planner or Today screen there is a small blue Pencil icon button. If you click this button them you can update the contents of that specific meeting (See example screen below). 
 
-### Code Splitting
+![Update Screen](docimages/update.png "Update Screen")
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You will also see a small blue Trash icon which you can use to delete a meeting from your planner.
 
-### Analyzing the Bundle Size
+### Screen Logout
+Finally if you wish are finished then you can click the `Logout` menu option to logout, where you will be prompted to confirm that you want to logout.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Update Screen](docimages/logout.png "Update Screen")
