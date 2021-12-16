@@ -24,7 +24,7 @@ The code for the *Back End Server* is located in a single file here: `BackEnd/se
 To launch the server from within the project root folder simply run he comment `node BackEnd/server.js`. By default the server listens on port 4000, running on localhost.
 
 ## Front End
-The front end web application is impleented using React and the initial skeleton of code was created using the utility `Create React App`.
+The front end web application is implemented using React and the initial skeleton of code was created using the utility `Create React App`.
 The source code for the web application is located within the `src` directory and to launch it you can run the command `npm start` from within the project root folder. 
 The front end application contains the following main screens.
 
