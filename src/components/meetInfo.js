@@ -24,7 +24,6 @@ export class MeetInfo extends React.Component {
         let _this = this;
         axios.delete(API_ROOT + "meeting/" + this.props.meeting._id)
         .then(()=>{
-            // this.props.ReloadData();
             _this.props.history.push("/planner");  
             window.location.reload();
         })
@@ -40,18 +39,17 @@ export class MeetInfo extends React.Component {
                     </Card.Header>
                     <Card.Body style={{fontSize: "70%"}} className="p-1">
                         {this.props.meeting.description}
-                        </Card.Body>
-                        <Card.Footer className="pl-1 m-0">
+                    </Card.Body>
+                    <Card.Footer className="pl-1 m-0">
                         <span  style={{display: "flex"}} className="p-0 m-0">
-                        <Card.Link className="p-0" title="click here to edit this entry"  href={"/update/" +this.props.meeting._id} className="btn btn-info btn-sm">
-                        <Icon.Pencil />
-                        </Card.Link>                    
-                        <Card.Link className="float-sm-end" onClick={this.DeleteMeeting} title="click here to delete this entry"  href="#" className="btn btn-info btn-sm">
-                        <Icon.Trash />
-                        </Card.Link>                    
+                            <Card.Link className="p-0" title="click here to edit this entry"  href={"/update/" +this.props.meeting._id} className="btn btn-info btn-sm">
+                                <Icon.Pencil />
+                            </Card.Link>                    
+                            <Card.Link className="float-sm-end" onClick={this.DeleteMeeting} title="click here to delete this entry"  href="#" className="btn btn-info btn-sm">
+                                <Icon.Trash />
+                            </Card.Link>                    
                         </span>
-                        </Card.Footer>
-                    
+                    </Card.Footer>
                 </Card>
         );
     }

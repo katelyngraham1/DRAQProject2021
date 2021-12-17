@@ -32,19 +32,6 @@ export class Update extends React.Component {
     componentDidMount(){
         console.log(this.props.match.params.id);
         this.loadMeetingData()
-        // axios.get(API_ROOT + 'meeting/' + this.props.match.params.id)
-        // .then(response => {
-        //     _this.setState({
-        //         _id:response.data._id,
-        //         Description:response.data.description,
-        //         Date:response.data.date,
-        //         StartTime:response.data.starttime,
-        //         EndTime:response.data.endtime
-        //     })
-        // })
-        // .catch((error)=> {
-        //     console.log(error);
-        // })
     }
 
     loadMeetingData() {
@@ -123,7 +110,7 @@ export class Update extends React.Component {
             _id: this.state._id
         }
 
-        axios.put('http://localhost:4000/api/meeting/' + this.state._id, updateMeeting)
+        axios.put(API_ROOT + 'meeting/' + this.state._id, updateMeeting)
         .then(res => {
             console.log(res.data)
             this.props.history.push("/planner");  
@@ -150,47 +137,6 @@ export class Update extends React.Component {
 
         );
     }
-    // render() {
-    //     return (
-    //         <div className='App'>
-    //             <form onSubmit={this.onSubmit}>
-    //                 <div className='form-group'>
-    //                     <label>Add Meeting: </label>
-    //                     <input type='text'
-    //                         className='form-control'
-    //                         value={this.state.Meet}
-    //                         onChange={this.onChangeMeeting}>
-    //                     </input>
-    //                 </div>
-
-    //                 <div className='form-group'>
-    //                     <label>Add Date of Meeting: </label>
-    //                     <input type='date'
-    //                         className='form-control'
-    //                         value={this.state.Date}
-    //                         onChange={this.onChangeDate}>
-    //                     </input>
-    //                 </div>
-
-    //                 <div className='form-group'>
-    //                     <label>Add Time Meeting is on: </label>
-    //                     <input type='time'
-    //                         className='form-control'
-    //                         value={this.state.Time}
-    //                         onChange={this.onChangeTime}>
-    //                     </input>
-    //                 </div>
-
-    //                 <div className='form-group'>
-    //                     <input type='submit'
-    //                         value='Update Meeting Information'
-    //                         className='btn btn-info'></input>
-    //                 </div>
-
-    //             </form>
-    //         </div>
-    //     );
-    // }
 }
 
 export default withRouter(Update);

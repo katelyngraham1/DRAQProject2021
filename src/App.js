@@ -14,9 +14,7 @@ import Login  from './components/login';
 import Logout  from './components/logout';
 import { LOGIN_TOKEN_NAME, LOGIN_TOKEN_ID } from "./constants";
 
-// localStorage.removeItem(LOGIN_TOKEN_NAME);
-// localStorage.removeItem(LOGIN_TOKEN_ID);
-
+// if user is already logged in then their token will be stored in local storage
 const user = localStorage.getItem(LOGIN_TOKEN_NAME);
 
 class App extends Component {

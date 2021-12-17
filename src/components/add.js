@@ -8,7 +8,6 @@ import Button from './button';
 import { Row, Col, Alert} from 'react-bootstrap';
 
 
-// Create Component
 export class Add extends React.Component {
 
     constructor() {
