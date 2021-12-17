@@ -53,7 +53,8 @@ export default function Login(props)  {
             .catch((err) => {
                 setError(err);
                 console.log(err);
-            });
+            }
+        );
     };
 
     const onChangeEmail = (e) => {
@@ -72,46 +73,45 @@ export default function Login(props)  {
                 </Col>
             </Row>
             <Row>
-            <Col></Col>
-            <Col>
-                <form>
-                    <p>Please enter your email and password below to login</p>
-                    <div className='form-group'>
-                        <label>Email Address: </label>
-                        <input type='text'
-                            className='form-control'
-                            value={email}
-                            onChange={onChangeEmail}>
-                        </input>
-                    </div>
+                <Col></Col>
+                <Col>
+                    <form>
+                        <p>Please enter your email and password below to login</p>
+                        <div className='form-group'>
+                            <label>Email Address: </label>
+                            <input type='text'
+                                className='form-control'
+                                value={email}
+                                onChange={onChangeEmail}>
+                            </input>
+                        </div>
 
-                    <div className='form-group'>
-                        <label>Password: </label>
-                        <input type='password'
-                            className='form-control'
-                            value={password}
-                            onChange={onChangePassword}>
-                            
-                        </input>
-                    </div>
-                    {error && <Alert className="my-3 p-0" variant="danger">{error}</Alert>}
-                    <div className='form-group'>
-                        <input type='submit'
-                            value='Login'
+                        <div className='form-group'>
+                            <label>Password: </label>
+                            <input type='password'
+                                className='form-control'
+                                value={password}
+                                onChange={onChangePassword}>
+                                
+                            </input>
+                        </div>
+                        {error && <Alert className="my-3 p-0" variant="danger">{error}</Alert>}
+                        <div className='form-group'>
+                            <input type='submit'
+                                value='Login'
+                                className='btn btn-info mt-3'
+                                onClick={onSubmit}></input>
+                        </div>
+                        <div className='form-group'>
+                        <Link 
                             className='btn btn-info mt-3'
-                            onClick={onSubmit}></input>
-                    </div>
-                    <div className='form-group'>
-                    <Link 
-                        className='btn btn-info mt-3'
-                        to={"/register"}>Register</Link>
-                    </div>
-
-                </form>
+                            to={"/register"}>Register
+                        </Link>
+                        </div>
+                    </form>
                 </Col>
                 <Col></Col>
-                </Row>
+            </Row>
         </Container>
     );
-
 }

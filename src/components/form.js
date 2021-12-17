@@ -11,7 +11,10 @@ export default class Form extends React.Component {
         return (
             <Container>
                 <form onSubmit={this.props.onSubmit}>
-                    <Row className="mb-3"><Col><h2>{this.props.title}</h2></Col></Row>
+                    <Row className="mb-3">
+                        <Col><h2>{this.props.title}</h2>
+                        </Col>
+                    </Row>
                     {this.props.children}
                 </form>
             </Container>

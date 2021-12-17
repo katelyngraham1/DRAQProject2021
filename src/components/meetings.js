@@ -20,7 +20,6 @@ export class Meetings extends React.Component {
                 {this.meetings()}
             </Container>
         )
-    
     }
 }
 

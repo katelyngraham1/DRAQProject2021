@@ -15,10 +15,8 @@ app.use(function(req, res, next){
     next();
 })
 
-// parse application/ x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false}))
 
-// parse application/json
 app.use(bodyParser.json())
 
 const serverAddress = 'localhost';
@@ -193,16 +191,13 @@ app.post('/api/meeting', async (req, res) => {
             endtime:req.body.endtime,
             userId:req.body.userId
         }, (err, meeting) => {
-            if (err) {
-                return res.send(error("Error creating meeting"));
-            }            
-            res.send(success(meeting) );
-        });
-        
-
+                if (err) {
+                    return res.send(error("Error creating meeting"));
+                }            
+                res.send(success(meeting) );
+            }
+        );
     });
-
-
 })
 
 function error(details) {

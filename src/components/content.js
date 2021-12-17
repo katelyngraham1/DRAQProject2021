@@ -36,10 +36,11 @@ export class Content extends React.Component {
         const parts = user.split(" ");
         const date = new Date().toLocaleDateString();
         
-        return ( <div>
-            <h1 > Today is {dayOfWeek(date)} </h1>
-            {this.state.meetings.length > 0 && <p>You have the following appointments scheduled for today</p>}
-            <Day showdate={true} date={date} appointments={this.state.meetings}/>
+        return ( 
+            <div>
+                <h1 > Today is {dayOfWeek(date)} </h1>
+                {this.state.meetings.length > 0 && <p>You have the following appointments scheduled for today</p>}
+                <Day showdate={true} date={date} appointments={this.state.meetings}/>
             </div>
         );    
     }

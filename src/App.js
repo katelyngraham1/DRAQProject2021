@@ -24,13 +24,12 @@ class App extends Component {
       return (
         <Router>
           <div className="App">
-          <Switch>
-          <Route path='/' component={Login} exact/>
-          <Route path='/register' component={Register} />
-          </Switch>
+            <Switch>
+              <Route path='/' component={Login} exact/>
+              <Route path='/register' component={Register} />
+            </Switch>
           </div>
-      </Router>
-
+        </Router>
       )
     }
     console.log("Rendering logged in.");
@@ -40,27 +39,25 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-
           <Navbar bg="info" variant="light" className="pl-1">
             <Navbar.Brand className="ml-1" href="#home">&nbsp; {parts[0]}'s Planner</Navbar.Brand>
-            <Nav className="mr-auto">
-              <Nav.Link href="/">Today</Nav.Link>
-              <Nav.Link href="/planner">Planner</Nav.Link>
-              <Nav.Link href="/add">Add</Nav.Link>
-              <Nav.Link className="ml-auto" href="/logout">Logout</Nav.Link>
-            </Nav>
-          </Navbar>
-
-          <br />
-          <div className="container">
-          <Switch>
-            <Route path='/' component={Content} exact />
-            <Route path='/add' component={Add}/>
-            <Route path='/logout' component={Logout}/>
-            <Route path='/planner' component={Planner}/>
-            <Route path='/update/:id'  component={Update}></Route>
-          </Switch>
-          </div>
+              <Nav className="mr-auto">
+                <Nav.Link href="/">Today</Nav.Link>
+                <Nav.Link href="/planner">Planner</Nav.Link>
+                <Nav.Link href="/add">Add</Nav.Link>
+                <Nav.Link className="ml-auto" href="/logout">Logout</Nav.Link>
+              </Nav>
+            </Navbar>
+            <br />
+            <div className="container">
+              <Switch>
+                <Route path='/' component={Content} exact />
+                <Route path='/add' component={Add}/>
+                <Route path='/logout' component={Logout}/>
+                <Route path='/planner' component={Planner}/>
+                <Route path='/update/:id'  component={Update}></Route>
+              </Switch>
+            </div>
         </div>
       </Router>
     );

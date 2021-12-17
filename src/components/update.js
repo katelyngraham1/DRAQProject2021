@@ -8,7 +8,6 @@ import Button from './button';
 import { Row, Col, Alert} from 'react-bootstrap';
 
 
-// Create Component
 export class Update extends React.Component {
 
     constructor() {
@@ -111,15 +110,16 @@ export class Update extends React.Component {
         }
 
         axios.put(API_ROOT + 'meeting/' + this.state._id, updateMeeting)
-        .then(res => {
-            console.log(res.data)
-            this.props.history.push("/planner");  
-            window.location.reload();
-        })
-        .catch((error)=> {
-            console.log(error);
-            this.setState(error);
-        })
+            .then(res => {
+                console.log(res.data)
+                this.props.history.push("/planner");  
+                window.location.reload();
+            })
+            .catch((error)=> {
+                console.log(error);
+                this.setState(error);
+            }
+        )
 
     }
 

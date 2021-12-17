@@ -9,18 +9,18 @@ export default class InputField extends React.Component {
 
     render() {
         return (
-                <Row className="pb-1">
-                    <Col className="float-right">
-                        <label >{this.props.label}</label>
-                    </Col>
-                    <Col>
-                        <input type={this.props.type}
+            <Row className="pb-1">
+                <Col className="float-right">
+                    <label >{this.props.label}</label>
+                </Col>
+                <Col>
+                    <input type={this.props.type}
                         className='form-control'
                         value={this.props.value}
                         onChange={this.props.onChange}>
-                        </input>
-                    </Col>                
-                </Row>
+                    </input>
+                </Col>                
+            </Row>
         );
     }
 }

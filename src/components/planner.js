@@ -8,7 +8,6 @@ import { Container, Row, Col} from 'react-bootstrap';
 
 const userId = localStorage.getItem(LOGIN_TOKEN_ID);
 
-// Read Component
 export class Planner extends React.Component {
 
     constructor(){
@@ -52,13 +51,12 @@ export class Planner extends React.Component {
 
     }
 
-
     render() {
         return (
             <div>
                 <h1>Your Weekly Planner View</h1>
                 <Row>
-                {this.days()}
+                    {this.days()}
                 </Row>                
             </div>
         );

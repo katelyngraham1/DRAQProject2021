@@ -33,27 +33,26 @@ export default function Logout(props)  {
                 <Col></Col>
                 <Col>
                     <form>
-                    <div className='form-group'>
-                        <Row>
-                            <Col>
-                                <input type='submit'
+                        <div className='form-group'>
+                            <Row>
+                                <Col>
+                                    <input type='submit'
                                     value='Yes Logout'
                                     className='btn btn-info mt-3'
                                     onClick={onLogout}></input>
-                            </Col>
-                            <Col>
-                                <input type='submit'
-                                    value='No Cancel That'
-                                    className='btn btn-info mt-3'
-                                    onClick={onCancelLogout}></input>
-                            </Col>
-                        </Row>
-                    </div>
+                                </Col>
+                                <Col>
+                                    <input type='submit'
+                                        value='No Cancel That'
+                                        className='btn btn-info mt-3'
+                                        onClick={onCancelLogout}></input>
+                                </Col>
+                            </Row>
+                        </div>
                     </form>
                 </Col>
                 <Col></Col>
             </Row>
         </Container>
     );
-
 }
